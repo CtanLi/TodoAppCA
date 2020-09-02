@@ -60,6 +60,7 @@
                                         <connections>
                                             <outlet property="arrowIndicator" destination="9cU-q5-P9C" id="8yr-hT-mnn"/>
                                             <outlet property="checkState" destination="vY2-S0-Ci5" id="mch-go-Hr5"/>
+                                            <outlet property="containerView" destination="1BG-tE-xi2" id="cJH-9t-hw5"/>
                                             <outlet property="title" destination="IkV-Sm-lrG" id="4j5-pb-Ae1"/>
                                         </connections>
                                     </tableViewCell>
@@ -104,7 +105,6 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="7Xa-RE-bSO" firstAttribute="leading" secondItem="XDc-hT-Lxh" secondAttribute="trailing" constant="8" id="F8M-wO-Ufu"/>
                                                     <constraint firstItem="XDc-hT-Lxh" firstAttribute="top" secondItem="lvI-PR-5Kn" secondAttribute="top" constant="13" id="FNJ-oG-K85"/>
@@ -137,7 +137,6 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="RMS-e7-CG5" firstAttribute="leading" secondItem="sRa-t7-uNM" secondAttribute="trailing" constant="8" id="ApX-qD-Dby"/>
                                                     <constraint firstItem="RMS-e7-CG5" firstAttribute="top" secondItem="EGk-lZ-qLZ" secondAttribute="top" constant="8" id="Bkc-Lo-AwV"/>
@@ -170,7 +169,6 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="FhZ-IR-9o9" secondAttribute="bottom" constant="12" id="9Xp-Wt-8f8"/>
                                                     <constraint firstItem="yZh-Fn-TY2" firstAttribute="leading" secondItem="FhZ-IR-9o9" secondAttribute="trailing" constant="8" id="9bn-NF-cUI"/>
@@ -223,7 +221,6 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="QDu-BV-uAs" firstAttribute="top" secondItem="4M5-La-Ntg" secondAttribute="top" constant="22" id="Fjo-q9-5gn"/>
                                     <constraint firstAttribute="trailing" secondItem="QDu-BV-uAs" secondAttribute="trailing" constant="8" id="G4j-zS-iu6"/>

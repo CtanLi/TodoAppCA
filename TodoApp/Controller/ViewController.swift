@@ -108,14 +108,12 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "TodoViewCell", for: indexPath) as! TodoViewCell
 		cell.data = filteredData[indexPath.row]
 		if self.selectedIndex == indexPath.row {
-			cell.title.backgroundColor = .orange
 			cell.title.lineBreakMode = .byWordWrapping
 			cell.title.numberOfLines = 0
 			DispatchQueue.main.async {
 				cell.arrowIndicator.transform = CGAffineTransform(rotationAngle: -.pi/2)
 			}
 		} else {
-			cell.title.backgroundColor = .blue
 			cell.title.lineBreakMode = .byTruncatingTail
 			cell.title.numberOfLines = 1
 			DispatchQueue.main.async {

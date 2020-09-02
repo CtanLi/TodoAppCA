@@ -12,6 +12,7 @@ class TodoViewCell: UITableViewCell {
 
 	@IBOutlet weak var title: UILabel!
 	@IBOutlet weak var arrowIndicator: UIImageView!
+	@IBOutlet weak var containerView: UIView!
 	@IBOutlet weak var checkState: UIImageView! {
 		didSet {
 			checkState.isHidden = true
@@ -33,6 +34,9 @@ class TodoViewCell: UITableViewCell {
 	override func awakeFromNib() {
 		super.awakeFromNib()
 		// Initialization code
+		containerView.layer.borderWidth = 2
+		containerView.layer.borderColor = UIColor.black.cgColor
+
 	}
 
 	override func setSelected(_ selected: Bool, animated: Bool) {

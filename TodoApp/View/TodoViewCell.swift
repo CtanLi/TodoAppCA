@@ -19,7 +19,7 @@ class TodoViewCell: UITableViewCell {
 		}
 	}
 
-	var data: TodoModel? {
+	var data: TodoViewModel? {
 		didSet {
 			guard let data = data else { return }
 			self.title.text = data.title

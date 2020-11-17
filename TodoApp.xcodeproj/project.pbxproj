@@ -19,6 +19,7 @@
 		4601AFBC25002A11006ACDA0 /* TodoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4601AFBB25002A11006ACDA0 /* TodoViewCell.swift */; };
 		4601AFBF25002BAA006ACDA0 /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4601AFBE25002BAA006ACDA0 /* TodoModel.swift */; };
 		4601AFC525002CA4006ACDA0 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4601AFC425002CA4006ACDA0 /* APIManager.swift */; };
+		4601AFCD2505B147006ACDA0 /* TodoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4601AFCC2505B147006ACDA0 /* TodoListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		4601AFBB25002A11006ACDA0 /* TodoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewCell.swift; sourceTree = "<group>"; };
 		4601AFBE25002BAA006ACDA0 /* TodoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoModel.swift; sourceTree = "<group>"; };
 		4601AFC425002CA4006ACDA0 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		4601AFCC2505B147006ACDA0 /* TodoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				4601AFBE25002BAA006ACDA0 /* TodoModel.swift */,
+				4601AFCC2505B147006ACDA0 /* TodoListViewModel.swift */,
 			);
 			path = TodoModel;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4601AFCD2505B147006ACDA0 /* TodoListViewModel.swift in Sources */,
 				4601AFC525002CA4006ACDA0 /* APIManager.swift in Sources */,
 				4601AF8C250023E9006ACDA0 /* ViewController.swift in Sources */,
 				4601AF88250023E9006ACDA0 /* AppDelegate.swift in Sources */,
@@ -483,6 +487,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SR6N4B6T96;
 				INFOPLIST_FILE = TodoApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -500,6 +505,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SR6N4B6T96;
 				INFOPLIST_FILE = TodoApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -10,10 +10,12 @@ import UIKit
 
 class ViewController: UIViewController, UISearchBarDelegate {
 
-	var data = [TodoModel]()
-	var nextItem = [TodoModel]()
-	var currentData = [TodoModel]()
-	var filteredData = [TodoModel]()
+	var post = TodoListViewModel()
+
+	var data = [TodoViewModel]()
+	var nextItem = [TodoViewModel]()
+	var currentData = [TodoViewModel]()
+	var filteredData = [TodoViewModel]()
 
 	var selectedIndex = -1
 	var nextData = Int()
@@ -30,12 +32,33 @@ class ViewController: UIViewController, UISearchBarDelegate {
 		super.viewDidLoad()
 		todoTableView.keyboardDismissMode = .onDrag
 		searchBar.delegate = self
-		getTodoData()
+
+		let _ = post.getTodo()
+		closureSetUp()
+		getTodoDataMVVM()
+	}
+
+	func closureSetUp()  {
+		 post.reloadList = { [weak self] ()  in
+			 ///UI chnages in main tread
+			 DispatchQueue.main.async {
+				self?.todoTableView.reloadData()
+			 }
+		 }
+	}
+
+	func getTodoDataMVVM() {
+		Api().getPost { (posts) in
+			self.data.append(contentsOf: self.post.posts)
+			self.currentData = self.next()
+			self.filteredData.append(contentsOf: self.currentData)
+			self.todoTableView.reloadData()
+		}
 	}
 
 	func getTodoData() {
 		Api().getPost { (posts) in
-			self.data.append(contentsOf: posts)
+			///self.data.append(contentsOf: posts)
 			self.currentData = self.next()
 			self.filteredData.append(contentsOf: self.currentData)
 			self.todoTableView.reloadData()
@@ -184,14 +207,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension ViewController {
 	//data page setup for next and previous page
-	func next() -> [TodoModel] {
+	func next() -> [TodoViewModel] {
 		nextData = nextData.advanced(by: 5)
 		nextData = nextData > data.endIndex ? data.startIndex : nextData
 		nextItem = Array(data.prefix(nextData))
 		return Array(nextItem.suffix(5))
 	}
 
-	func prev() -> [TodoModel] {
+	func prev() -> [TodoViewModel] {
 		previousData = previousData.advanced(by: 5)
 		previousData = previousData < nextItem.startIndex ? nextItem.endIndex : previousData
 		let previousItem = Array(nextItem.dropLast(previousData))
@@ -206,7 +229,7 @@ extension ViewController {
 		if searchText == String() {
 			self.filteredData = currentData
 		} else {
-			filteredData = currentData.filter({( todo : TodoModel) -> Bool in
+			filteredData = currentData.filter({( todo : TodoViewModel) -> Bool in
 				guard let searchValue = searchBar.text else { return Bool() }
 				return todo.title.contains(searchValue)
 			})

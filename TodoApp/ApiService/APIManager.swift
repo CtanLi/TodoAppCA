@@ -23,4 +23,19 @@ class Api {
 			.resume()
 		}
 	}
+
+	func getNews(completion: @escaping ([TodoModel]) -> Void) {
+		if let url = URL(string: "https://jsonplaceholder.typicode.com/news") {
+			URLSession.shared.dataTask(with: url) { (data, _, _) in
+				if let data = data {
+					let post = try! JSONDecoder().decode([TodoModel].self, from: data)
+					print(post)
+					DispatchQueue.main.async {
+						completion(post)
+					}
+				}
+			}
+			.resume()
+		}
+	}
 }
